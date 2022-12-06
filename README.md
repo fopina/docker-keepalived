@@ -1,6 +1,6 @@
 # docker-keepalived
 
-**A docker image to run keepalived.** [keepalived.org](http://keepalived.org/)
+**A docker image to run [keepalived](http://keepalived.org/)** 
 
 ## Quick start
 
