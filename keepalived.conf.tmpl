@@ -1,0 +1,19 @@
+vrrp_instance {{ "KEEPALIVED_VRRP" | envFile }} {
+  state {{ "KEEPALIVED_STATE" | envFile }}
+
+  interface {{ "KEEPALIVED_ETH" | envFile }}
+  virtual_router_id {{ "KEEPALIVED_ROUTER" | envFile }}
+  priority {{ "KEEPALIVED_PRIORITY" | envFile }}
+  advert_int {{ "KEEPALIVED_ADVERT" | envFile }}
+
+  {{ if ne ("KEEPALIVED_AUTH" | envFile) "" }}
+  authentication {
+    auth_type PASS
+    auth_pass {{ "KEEPALIVED_AUTH" | envFile }}
+  }
+  {{ end }}
+
+  virtual_ipaddress {
+	{{ "KEEPALIVED_VIP" | envFile }}
+  }
+}
