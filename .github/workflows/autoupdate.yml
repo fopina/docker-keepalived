@@ -23,7 +23,7 @@ jobs:
         run: |
             echo "version=$(docker run --rm \
                                        alpine \
-                                       sh -c "apk update && apk info keepalived" | grep ' description:$' | cut -d ' ' -f1 | cut -d '-' -f2-)" \
+                                       sh -c "apk update && apk info keepalived" | grep -v snmp | grep ' description:$' | cut -d ' ' -f1 | cut -d '-' -f2-)" \
                  >> $GITHUB_OUTPUT
 
       - name: Check for any new
