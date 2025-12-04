@@ -2,6 +2,8 @@
 
 **A docker image to run [keepalived](http://keepalived.org/)** 
 
+> No longer maintained, I've moved from docker swarm to k3s (and metallb replaces my use for this)
+
 ## Quick start
 
 This image require the kernel module ip_vs loaded on the host (`modprobe ip_vs`) and needs some extra capabilities:
